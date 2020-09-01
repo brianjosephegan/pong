@@ -7,8 +7,16 @@ public class Paddle : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] string inputAxis;
+    [SerializeField] int score = 0;
 
     Rigidbody2D paddleRigidbody2D;
+
+    public int Score => score;
+
+    public void ScoreGoal()
+    {
+        score++;
+    }
 
     // Start is called before the first frame update
     private void Start()

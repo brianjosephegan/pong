@@ -118,7 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  inputAxis: Vertical
+  inputAxis: Vertical 2
+  score: 0
 --- !u!61 &3817056453476590579
 BoxCollider2D:
   m_ObjectHideFlags: 0

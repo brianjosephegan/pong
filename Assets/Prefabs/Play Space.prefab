@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 434926005}
   - component: {fileID: 434926007}
   - component: {fileID: 434926006}
+  - component: {fileID: 434926008}
   m_Layer: 5
   m_Name: Paddle 1 Score Text
   m_TagString: Untagged
@@ -402,6 +403,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 999
+--- !u!114 &434926008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434926004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c5ad01ebf6cf44597770842e24a6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddle: {fileID: 0}
 --- !u!1 &435307960
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705012991}
   - component: {fileID: 705012992}
+  - component: {fileID: 705012993}
   m_Layer: 0
   m_Name: Right Wall
   m_TagString: Untagged
@@ -682,6 +697,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 20.00085}
   m_EdgeRadius: 0
+--- !u!114 &705012993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705012990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1718091f051014285cbf6a65687d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackingPaddle: {fileID: 0}
 --- !u!1 &921439154
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +721,7 @@ GameObject:
   - component: {fileID: 921439155}
   - component: {fileID: 921439157}
   - component: {fileID: 921439156}
+  - component: {fileID: 921439158}
   m_Layer: 5
   m_Name: Paddle 2 Score Text
   m_TagString: Untagged
@@ -760,6 +789,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 999
+--- !u!114 &921439158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921439154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c5ad01ebf6cf44597770842e24a6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddle: {fileID: 0}
 --- !u!1 &1186879790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,6 +1412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1893963504}
   - component: {fileID: 1893963505}
+  - component: {fileID: 1893963506}
   m_Layer: 0
   m_Name: Left Wall
   m_TagString: Untagged
@@ -1417,6 +1460,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 20.000849}
   m_EdgeRadius: 0
+--- !u!114 &1893963506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893963503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1718091f051014285cbf6a65687d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackingPaddle: {fileID: 0}
 --- !u!1 &2001640791
 GameObject:
   m_ObjectHideFlags: 0
