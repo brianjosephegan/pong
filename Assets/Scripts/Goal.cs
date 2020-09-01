@@ -23,6 +23,6 @@ public class Goal : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         attackingPaddle.ScoreGoal();
-        ball.Reset();
+        ball.Restart();
     }
 }

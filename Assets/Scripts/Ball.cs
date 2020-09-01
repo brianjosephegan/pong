@@ -15,7 +15,7 @@ public class Ball : MonoBehaviour
     Vector2 initialPosition;
     bool isRestarting;
 
-    public void Reset()
+    public void Restart()
     {
         ballRigidbody2D.velocity = Vector2.zero;
         transform.position = initialPosition;
@@ -28,7 +28,8 @@ public class Ball : MonoBehaviour
         initialPosition = transform.position;
         ballAudioSource = GetComponent<AudioSource>();
         ballRigidbody2D = GetComponent<Rigidbody2D>();
-        ballRigidbody2D.velocity = new Vector2(xPush, yPush);
+
+        Restart();
     }
 
     // Update is called once per frame
