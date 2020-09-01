@@ -8,8 +8,10 @@ public class Paddle : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] string inputAxis;
     [SerializeField] int score = 0;
+    [SerializeField] bool autoPlayEnabled;
 
     Rigidbody2D paddleRigidbody2D;
+    Ball ball;
 
     public int Score => score;
 
@@ -22,6 +24,7 @@ public class Paddle : MonoBehaviour
     private void Start()
     {
         paddleRigidbody2D = GetComponent<Rigidbody2D>();
+        ball = FindObjectOfType<Ball>();
     }
 
     // Update is called once per frame
@@ -32,8 +35,16 @@ public class Paddle : MonoBehaviour
 
     private void Move()
     {
-        float controlThrow = CrossPlatformInputManager.GetAxis(inputAxis); // value between -1 and +1
-        Vector2 paddleVelocity = new Vector2(paddleRigidbody2D.velocity.x, controlThrow * moveSpeed);
-        paddleRigidbody2D.velocity = paddleVelocity;
+        if (autoPlayEnabled)
+        {
+            float newY = ball.transform.position.y;
+            transform.position = new Vector2(transform.position.x, newY);
+        }
+        else
+        {
+            float controlThrow = CrossPlatformInputManager.GetAxis(inputAxis); // value between -1 and +1
+            Vector2 paddleVelocity = new Vector2(paddleRigidbody2D.velocity.x, controlThrow * moveSpeed);
+            paddleRigidbody2D.velocity = paddleVelocity;
+        }
     }
 }
