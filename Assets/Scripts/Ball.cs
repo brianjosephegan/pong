@@ -11,14 +11,14 @@ public class Ball : MonoBehaviour
     Rigidbody2D ballRigidbody2D;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         ballRigidbody2D = GetComponent<Rigidbody2D>();
         ballRigidbody2D.velocity = new Vector2(xPush, yPush);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }

@@ -6,6 +6,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Paddle : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
+    [SerializeField] string inputAxis;
 
     Rigidbody2D paddleRigidbody2D;
 
@@ -23,7 +24,7 @@ public class Paddle : MonoBehaviour
 
     private void Move()
     {
-        float controlThrow = CrossPlatformInputManager.GetAxis("Vertical"); // value between -1 and +1
+        float controlThrow = CrossPlatformInputManager.GetAxis(inputAxis); // value between -1 and +1
         Vector2 paddleVelocity = new Vector2(paddleRigidbody2D.velocity.x, controlThrow * moveSpeed);
         paddleRigidbody2D.velocity = paddleVelocity;
     }
