@@ -8,10 +8,11 @@ public class Paddle : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] string inputAxis;
     [SerializeField] int score = 0;
-    [SerializeField] bool autoPlayEnabled;
+    [SerializeField] bool isPlayerTwo;
 
     Rigidbody2D paddleRigidbody2D;
     Ball ball;
+    bool autoPlayEnabled;
 
     public int Score => score;
 
@@ -25,6 +26,11 @@ public class Paddle : MonoBehaviour
     {
         paddleRigidbody2D = GetComponent<Rigidbody2D>();
         ball = FindObjectOfType<Ball>();
+
+        if (isPlayerTwo && PlayerPrefsController.GetNumberOfPlayer() == 1)
+        {
+            autoPlayEnabled = true;
+        }
     }
 
     // Update is called once per frame
