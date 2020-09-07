@@ -7,6 +7,7 @@ public class OptionsController : MonoBehaviour
 {
     [SerializeField] Toggle singlePlayerToggle;
     [SerializeField] Toggle twoPlayerToggle;
+    [SerializeField] Slider goalLimitSlider;
 
     public void SaveAndExit()
     {
@@ -18,6 +19,8 @@ public class OptionsController : MonoBehaviour
         {
             PlayerPrefsController.SetNumberOfPlayers(2);
         }
+
+        PlayerPrefsController.SetGoalLimit((int)goalLimitSlider.value);
 
         FindObjectOfType<SceneLoader>().LoadMainMenu();
     }
