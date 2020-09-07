@@ -10,6 +10,25 @@ public class OptionsController : MonoBehaviour
     [SerializeField] Slider goalLimitSlider;
     [SerializeField] Slider soundVolumeSlider;
 
+    [SerializeField] int defaultGoalLimit = 3;
+    [SerializeField] float defaultSoundVolume = 80f;
+
+    // Start is called before the first frame update
+    private void Start()
+    {
+        if (PlayerPrefsController.GetNumberOfPlayer() == 1)
+        {
+            singlePlayerToggle.isOn = true;
+        }
+        else
+        {
+            twoPlayerToggle.isOn = true;
+        }
+
+        goalLimitSlider.value = PlayerPrefsController.GetGoalLimit();
+        soundVolumeSlider.value = PlayerPrefsController.GetSoundVolume();
+    }
+
     public void SaveAndExit()
     {
         if (singlePlayerToggle.isOn)
@@ -25,5 +44,12 @@ public class OptionsController : MonoBehaviour
         PlayerPrefsController.SetSoundVolume(soundVolumeSlider.value);
 
         FindObjectOfType<SceneLoader>().LoadMainMenu();
+    }
+
+    public void SetDefaults()
+    {
+        singlePlayerToggle.isOn = true;
+        goalLimitSlider.value = defaultGoalLimit;
+        soundVolumeSlider.value = defaultSoundVolume;
     }
 }

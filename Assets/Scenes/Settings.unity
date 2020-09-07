@@ -672,6 +672,8 @@ MonoBehaviour:
   twoPlayerToggle: {fileID: 437119676}
   goalLimitSlider: {fileID: 1248982898}
   soundVolumeSlider: {fileID: 380255653}
+  defaultGoalLimit: 3
+  defaultSoundVolume: 80
 --- !u!1 &380255651
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,7 +827,7 @@ GameObject:
   - component: {fileID: 436905060}
   - component: {fileID: 436905059}
   m_Layer: 5
-  m_Name: Cancel
+  m_Name: Cancel Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -894,8 +896,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadNewGame
+      - m_Target: {fileID: 1599586897}
+        m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1201,7 +1203,7 @@ GameObject:
   - component: {fileID: 565794542}
   - component: {fileID: 565794541}
   m_Layer: 5
-  m_Name: Defaults
+  m_Name: Defaults Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1270,8 +1272,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadNewGame
+      - m_Target: {fileID: 167429424}
+        m_MethodName: SetDefaults
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

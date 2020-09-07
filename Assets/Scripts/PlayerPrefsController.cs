@@ -10,6 +10,15 @@ public class PlayerPrefsController : MonoBehaviour
     const string GOAL_LIMIT_KEY = "goal limit";
     const string SOUND_VOLUME_KEY = "sound volume";
 
+    public const int DEFAULT_NUMBER_OF_PLAYERS = 1;
+    public const int DEFAULT_GOAL_LIMIT = 3;
+    public const float DEFAULT_SOUND_VOLUME = 80f;
+
+    public static bool HasNumberOfPlayers()
+    {
+        return PlayerPrefs.HasKey(NUMBER_OF_PLAYERS_KEY);
+    }
+
     public static void SetNumberOfPlayers(int numberOfPlayers)
     {
         PlayerPrefs.SetInt(NUMBER_OF_PLAYERS_KEY, numberOfPlayers);
@@ -17,7 +26,19 @@ public class PlayerPrefsController : MonoBehaviour
 
     public static int GetNumberOfPlayer()
     {
-        return PlayerPrefs.GetInt(NUMBER_OF_PLAYERS_KEY);
+        if (HasNumberOfPlayers())
+        {
+            return PlayerPrefs.GetInt(NUMBER_OF_PLAYERS_KEY);
+        }
+        else
+        {
+            return DEFAULT_NUMBER_OF_PLAYERS;
+        }
+    }
+
+    public static bool HasGoalLimit()
+    {
+        return PlayerPrefs.HasKey(GOAL_LIMIT_KEY);
     }
 
     public static void SetGoalLimit(int goalLimit)
@@ -27,7 +48,19 @@ public class PlayerPrefsController : MonoBehaviour
 
     public static int GetGoalLimit()
     {
-        return PlayerPrefs.GetInt(GOAL_LIMIT_KEY);
+        if (HasGoalLimit())
+        {
+            return PlayerPrefs.GetInt(GOAL_LIMIT_KEY);
+        }
+        else
+        {
+            return DEFAULT_GOAL_LIMIT;
+        }
+    }
+
+    public static bool HasSoundVolume()
+    {
+        return PlayerPrefs.HasKey(SOUND_VOLUME_KEY);
     }
 
     public static void SetSoundVolume(float soundVolume)
@@ -37,6 +70,13 @@ public class PlayerPrefsController : MonoBehaviour
 
     public static float GetSoundVolume()
     {
-        return PlayerPrefs.GetFloat(SOUND_VOLUME_KEY);
+        if (HasSoundVolume())
+        {
+            return PlayerPrefs.GetFloat(SOUND_VOLUME_KEY);
+        }
+        else
+        {
+            return DEFAULT_SOUND_VOLUME;
+        }
     }
 }
