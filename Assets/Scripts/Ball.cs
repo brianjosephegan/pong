@@ -9,11 +9,11 @@ public class Ball : MonoBehaviour
     [SerializeField] float randomFactor = 0.2f;
     [SerializeField] float restartDelay = 2.0f;
     [SerializeField] AudioClip ballCollisionSFX;
+    [SerializeField] AudioClip goalScoredSFX;
 
     AudioSource ballAudioSource;
     Rigidbody2D ballRigidbody2D;
     Vector2 initialPosition;
-    bool isRestarting;
 
     public void Stop()
     {
@@ -45,9 +45,14 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isRestarting) { return; }
-
-        ballAudioSource.PlayOneShot(ballCollisionSFX, PlayerPrefsController.GetSoundVolume() / 100);
+        if (collision.gameObject.GetComponent<Paddle>() != null)
+        {
+            ballAudioSource.PlayOneShot(ballCollisionSFX, PlayerPrefsController.GetSoundVolume() / 100);
+        }
+        else
+        {
+            ballAudioSource.PlayOneShot(goalScoredSFX, PlayerPrefsController.GetSoundVolume() / 100);
+        }
 
         Vector2 velocityTweak = new Vector2(Random.Range(0, randomFactor), Random.Range(0, randomFactor));
         ballRigidbody2D.velocity += velocityTweak;
@@ -55,9 +60,7 @@ public class Ball : MonoBehaviour
 
     private IEnumerator RestartAfterDelay()
     {
-        isRestarting = true;
         yield return new WaitForSeconds(restartDelay);
         ballRigidbody2D.velocity = new Vector2(xPush, yPush);
-        isRestarting = false;
     }
 }
