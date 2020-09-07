@@ -8,6 +8,7 @@ public class OptionsController : MonoBehaviour
     [SerializeField] Toggle singlePlayerToggle;
     [SerializeField] Toggle twoPlayerToggle;
     [SerializeField] Slider goalLimitSlider;
+    [SerializeField] Slider soundVolumeSlider;
 
     public void SaveAndExit()
     {
@@ -21,6 +22,7 @@ public class OptionsController : MonoBehaviour
         }
 
         PlayerPrefsController.SetGoalLimit((int)goalLimitSlider.value);
+        PlayerPrefsController.SetSoundVolume(soundVolumeSlider.value);
 
         FindObjectOfType<SceneLoader>().LoadMainMenu();
     }

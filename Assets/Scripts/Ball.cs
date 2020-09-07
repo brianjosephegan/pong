@@ -47,7 +47,7 @@ public class Ball : MonoBehaviour
     {
         if (isRestarting) { return; }
 
-        ballAudioSource.PlayOneShot(ballCollisionSFX);
+        ballAudioSource.PlayOneShot(ballCollisionSFX, PlayerPrefsController.GetSoundVolume() / 100);
 
         Vector2 velocityTweak = new Vector2(Random.Range(0, randomFactor), Random.Range(0, randomFactor));
         ballRigidbody2D.velocity += velocityTweak;
