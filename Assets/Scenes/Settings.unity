@@ -634,7 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singlePlayerToggle: {fileID: 50674240}
   twoPlayerToggle: {fileID: 437119676}
-  goalLimitSlider: {fileID: 0}
+  goalLimitSlider: {fileID: 1248982898}
 --- !u!1 &436064494
 GameObject:
   m_ObjectHideFlags: 0

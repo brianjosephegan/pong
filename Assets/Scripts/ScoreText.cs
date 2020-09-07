@@ -18,6 +18,11 @@ public class ScoreText : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (FindObjectOfType<WinManager>().GameOver)
+        {
+            return;
+        }
+
         scoreText.text = paddle.Score.ToString();
     }
 }

@@ -6,12 +6,10 @@ public class Goal : MonoBehaviour
 {
     [SerializeField] Paddle attackingPaddle;
 
-    Ball ball;
-
     // Start is called before the first frame update
     private void Start()
     {
-        ball = FindObjectOfType<Ball>();
+
     }
 
     // Update is called once per frame
@@ -23,6 +21,5 @@ public class Goal : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         attackingPaddle.ScoreGoal();
-        ball.Restart();
     }
 }

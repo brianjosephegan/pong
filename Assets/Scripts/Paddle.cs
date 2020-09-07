@@ -14,11 +14,43 @@ public class Paddle : MonoBehaviour
     Ball ball;
     bool autoPlayEnabled;
 
+    public string PlayerName
+    {
+        get
+        {
+            if (isPlayerTwo)
+            {
+                if (autoPlayEnabled)
+                {
+                    return "Computer";
+                }
+                else
+                {
+                    return "Player Two";
+                }
+            }
+            else
+            {
+                return "Player One";
+            }
+        }
+    }
+
     public int Score => score;
 
     public void ScoreGoal()
     {
         score++;
+
+        if (score == PlayerPrefsController.GetGoalLimit())
+        {
+            FindObjectOfType<WinManager>().TriggerWinScenario(this);
+            ball.Stop();
+        }
+        else
+        {
+            ball.Restart();
+        }
     }
 
     // Start is called before the first frame update

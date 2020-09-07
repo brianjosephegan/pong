@@ -15,6 +15,11 @@ public class Ball : MonoBehaviour
     Vector2 initialPosition;
     bool isRestarting;
 
+    public void Stop()
+    {
+        ballRigidbody2D.velocity = Vector2.zero;
+    }
+
     public void Restart()
     {
         ballRigidbody2D.velocity = Vector2.zero;
